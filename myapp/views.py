@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from myapp.models import student
 # Create your views here.
-def index(request):
-    return render(request, 'myapp/index.html')
+
 
 def index2(request):
     if request.method =='POST':
@@ -12,3 +11,6 @@ def index2(request):
        s = student(firstname=fname,email=email,message=message)
        s.save()
     return render(request,'myapp/secondpage.html')
+
+def index(request):
+    return render(request, 'myapp/index.html')
